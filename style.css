@@ -365,8 +365,7 @@ article .icon {
 
 .project-img {
     border-radius: 2rem;
-    width: 90%;
-    height: 90%;
+    height: 20rem;
 }
 
 .project-title {
@@ -377,6 +376,11 @@ article .icon {
 .project-btn {
     color: black;
     border-color: rgb(48, 47, 47);
+}
+
+.project-desc {
+    margin-bottom: 1rem;
+    margin-top: 0.3rem;
 }
 
 /* CONTACT SECTION */

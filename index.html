@@ -65,12 +65,12 @@
                 <img src="./assets/linkedin.png" 
                     alt="My LinkedIn Profile"
                     class="icon" 
-                    onclick="location.href='https://www.linkedin.com/in/ser-wei-quek-91a362289/'"
+                    onclick="window.open('https://www.linkedin.com/in/ser-wei-quek-91a362289/')"
                 >
                 <img src="./assets/github.png" 
                     alt="My GitHub Profile"
                     class="icon" 
-                    onclick="location.href='https://github.com/serweiq'"
+                    onclick="window.open('https://github.com/serweiq')"
                 >
             </div>
         </div>
@@ -81,15 +81,15 @@
         <h1 class="title">About Me</h1>
         <div class="section-container">
             <div class="section__pic-container">
-                <img src="./assets/about-pic.png" alt="Profile Picture" class="about-pic">
+                <img src="./assets/about-pic-2.jpg" alt="Profile Picture" class="about-pic">
             </div>
             <div class="about-details-container">
                 <div class="about-containers">
             
                     <div class="details-container">
                         <img src="./assets/experience.png" alt="Experience icon" class="icon">
-                        <h3>Experience</h3>
-                        <p>Year 2 Information Systems Student at NUS</p>
+                        <h3>Skills</h3>
+                        <p>Full-Stack Development<br>Data Analytics</p>
                     </div>
             
                     <div class="details-container">
@@ -101,10 +101,11 @@
                 </div>
                 <div class="text-container">
                     <p>
-                        sadfsdafsdadfasdfsadfsdsafdassadsafdasffasasas
-                        asdfsfdasadfsdf
-                        sdafsfdasafdsafdsfdasafd
-                        adsffsadsafdasdfsadafsdfsadsadf
+                        Hi! I am Ser Wei, a student pursuing my Bachelor Degree in Information Systems 
+                        at the National University of Singapore. Currently, I am exploring System Development 
+                        and Data Analytics. aiming to build a strong foundation for my future endeavors.
+                        <br>
+                        Outside of academics, I enjoy relaxing with some video games or working ot at the gym :)
                     </p>
                 </div>
             </div>
@@ -153,25 +154,17 @@
                         <article>
                             <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
                             <div>
-                                <h3>HTML</h3>
-                                <p>Basic</p>
+                                <h3>SQL</h3>
+                                <p>Intermediate</p>
                             </div>
                         </article>
                         <article>
                             <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
                             <div>
-                                <h3>CSS</h3>
-                                <p>Basic</p>
+                                <h3>Git</h3>
+                                <p>Intermediate</p>
                             </div>
                         </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
-                            <div>
-                                <h3>JavaScript</h3>
-                                <p>Basic</p>
-                            </div>
-                        </article>
-
                     </div>
                 </div>
             </div>
@@ -188,23 +181,34 @@
             <div class="about-containers">
                 <div class="details-container color-container">
                     <div class="article-container">
-                        <img src="./assets/project-1.png" alt="Project 1" class="project-img">
+                        <img src="./assets/dungeon-luncheon.png" alt="Project 1" class="project-img">
                     </div>
-                    <h2 class="experience-subtitle project-title">Project One</h2>
+                    <h2 class="experience-subtitle project-title">2D Rogue-like Shooter</h2>
+                    <h3>May - Aug '23</h3>
+                    <p class="project-desc">Dungeon Luncheon is a 2D top-down shooter made in Unity. It is coded in C# with 
+                        unique hand-drawn sprite assets and was a pair project for the NUS Orbital program.
+                        <br> Fuelled by my passion for games, I put over 180 hours into this project and learnt more about 
+                        Unit Testing, Version Control, project design and more!
+                    </p>
                     <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">Github</button>
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">Live Demo</button>
+                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/ryan-txn/gameIsGame')">Github</button>
+                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://www.youtube.com/watch?v=BOqt3R3saLM')">Video</button>
                     </div>
                 </div>
 
                 <div class="details-container color-container">
                     <div class="article-container">
-                        <img src="./assets/project-1.png" alt="Project 1" class="project-img">
+                        <img src="./assets/wordbot-pic.png" alt="Project 1" class="project-img">
                     </div>
-                    <h2 class="experience-subtitle project-title">Project One</h2>
+                    <h2 class="experience-subtitle project-title">Word Guess Telegram Bot</h2>
+                    <h3>Dec '24</h3>
+                    <p class="project-desc">A telegram bot coded in python. Meant to facilitate a word guessing game in group chats 
+                        where players take turns sending words to the bot for other players to guess.
+                        <br> Made over the winter holidays and learnt more about Bot implementation and API usage. 
+                        Can be found on Telegram @GuessMyWord_GameBot
+                    </p>
                     <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">Github</button>
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">Live Demo</button>
+                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://t.me/guessmyword_gamebot')">Tele Link</button>
                     </div>
                 </div>
             </div>
@@ -222,7 +226,7 @@
             </div>
             <div class="contact-info-container">
                 <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon">
-                <p><a href="https://www.linkedin.com/in/ser-wei-quek-91a362289">LinkedIn</a></p>
+                <p><a href="https://www.linkedin.com/in/ser-wei-quek-91a362289"  target="_blank">LinkedIn</a></p>
             </div>
         </div>
     </section>
