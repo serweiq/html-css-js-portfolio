@@ -332,6 +332,58 @@ section {
     border-color: none;
 }
 
+.work-experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.work-experience-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    text-align: left;
+}
+
+.work-experience-logo {
+    flex: 0 0 7rem;
+    width: 7rem;
+    height: 7rem;
+    object-fit: contain;
+}
+
+.work-experience-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.work-experience-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.work-experience-heading .experience-subtitle {
+    margin-bottom: 0.25rem;
+    color: black;
+}
+
+.work-experience-date {
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.work-experience-list {
+    margin: 1rem 0 0 1.25rem;
+    color: rgb(85, 85, 85);
+}
+
+.work-experience-list li {
+    margin-bottom: 0.5rem;
+}
+
 .other-details-container {
     padding: 1rem;
     flex: 1;
@@ -393,6 +445,24 @@ article .icon {
 .project-img {
     border-radius: 2rem;
     height: 20rem;
+}
+
+.project-text-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20rem;
+    border-radius: 2rem;
+    background: linear-gradient(135deg, rgb(224, 235, 247), rgb(245, 239, 223));
+    color: rgb(53, 53, 53);
+    letter-spacing: 0.08rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.project-text-banner span {
+    padding: 1rem;
+    border: 1px solid rgb(53, 53, 53);
 }
 
 .project-title {

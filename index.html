@@ -50,7 +50,7 @@
             <div class="btn-container">
                 <button 
                     class="btn btn-color-2" 
-                    onclick="window.open('./assets/y3s1 Resume 2.pdf')"
+                    onclick="window.open('./assets/QuekSerWei_Resume.pdf')"
                 >
                     Download Resume
                 </button>
@@ -95,7 +95,7 @@
                     <div class="details-container">
                         <img src="./assets/education.png" alt="Education icon" class="icon">
                         <h3>Education</h3>
-                        <p>Year 3 Information Systems Student at NUS</p>
+                        <p>Year 4 Information Systems Student at NUS</p>
                     </div>
             
                 </div>
@@ -119,6 +119,43 @@
         <p class="section__text__p1">Explore My</p>
         <h1 class="title">Experience</h1>
         <div class="experience-details-container">
+            <div class="work-experience-container">
+                <div class="details-container work-experience-card">
+                    <img src="./assets/sats.png" alt="SATS Ltd. logo" class="work-experience-logo">
+                    <div class="work-experience-content">
+                        <div class="work-experience-heading">
+                            <div>
+                                <h2 class="experience-subtitle">SATS Ltd.</h2>
+                                <h3>MLOps Intern</h3>
+                            </div>
+                            <p class="work-experience-date">May 2026 - Nov 2026</p>
+                        </div>
+                        <ul class="work-experience-list">
+                            <li>Developed and maintained Azure-based AI and automation solutions for data and document processing workflows.</li>
+                            <li>Built LLM-based extraction and validation workflows for flight and billing processes, supported by Power BI analysis.</li>
+                            <li>Created technical documentation, user guides, and UAT materials while collaborating with stakeholders to validate solutions.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="details-container work-experience-card">
+                    <img src="./assets/IWV.png" alt="Iconz-Webvisions logo" class="work-experience-logo">
+                    <div class="work-experience-content">
+                        <div class="work-experience-heading">
+                            <div>
+                                <h2 class="experience-subtitle">Iconz-Webvisions Pte. Ltd.</h2>
+                                <h3>Technology &amp; Solutions Intern</h3>
+                            </div>
+                            <p class="work-experience-date">Jun 2025 - Aug 2025</p>
+                        </div>
+                        <ul class="work-experience-list">
+                            <li>Integrated CRM data with Xero to automate synchronization of companies, invoices, and products.</li>
+                            <li>Implemented secure Xero OAuth 2.0 login, token storage, and tenant selection using CodeIgniter and the Calcinai PHP SDK.</li>
+                            <li>Built admin dashboards with DataTables, role-based access control, and enhanced Monolog logging.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <div class="about-containers">
                 <div class="details-container">
                     <h2 class="experience-subtitle">Frontend Development</h2>
@@ -234,52 +271,66 @@
             <div class="about-containers">
                 <div class="details-container color-container">
                     <div class="article-container">
-                        <img src="./assets/dungeon-luncheon.png" alt="Project 1" class="project-img">
+                        <img src="./assets/sla-cover.png" alt="AI Property Smart Search project" class="project-img">
                     </div>
-                    <h2 class="experience-subtitle project-title">2D Rogue-like Shooter</h2>
-                    <h3>May - Aug '23</h3>
-                    <p class="project-desc">Dungeon Luncheon is a 2D top-down shooter made in Unity. It is coded in C# with 
-                        unique hand-drawn sprite assets and was a pair project for the NUS Orbital program.
-                        <br> Fuelled by my passion for games, I put over 180 hours into this project and learnt more about 
-                        Unit Testing, Version Control, project design and more!
-                    </p>
+                    <h2 class="experience-subtitle project-title">AI Property Smart Search</h2>
+                    <h3>Aug - Nov '25</h3>
+                    <p class="project-desc">An AI-powered smart search property site developed with SLA as an industry partner for the IS4108 Capstone Project at NUS.
+                        <br>Built with ReactJS, Node.js, PostgreSQL, LangChain, and Azure OpenAI to provide intelligent property search capabilities.
+                    </p>  
                     <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/ryan-txn/gameIsGame')">Github</button>
-                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://www.youtube.com/watch?v=BOqt3R3saLM')">Video</button>
-                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://bungxd.itch.io/dungeon-luncheon')">Game</button>
+                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://www.youtube.com/watch?v=OoS8T235cOE')">Video</button>
                     </div>
                 </div>
 
                 <div class="details-container color-container">
+                    <div class="project-text-banner">
+                        <span>FULL-STACK WEB APP</span>
+                    </div>
+                    <h2 class="experience-subtitle project-title">Jolliville</h2>
+                    <h3>Apr '25</h3>
+                    <p class="project-desc">A full-stack wellness platform built with Next.js, React, TypeScript, Express.js, and Supabase, featuring journaling, wellness exercises, and an interactive gamified village.
+                        <br>Integrated the OpenAI API for an AI companion, with Supabase authentication, protected routes, and persistent conversation history.
+                    </p>
+                </div>
+
+                <div class="details-container color-container">
                     <div class="article-container">
-                        <img src="./assets/wordbot-pic.png" alt="Project 1" class="project-img">
+                        <img src="./assets/wordbot-pic.png" alt="Word Guess Telegram Bot project" class="project-img">
                     </div>
                     <h2 class="experience-subtitle project-title">Word Guess Telegram Bot</h2>
                     <h3>Dec '24</h3>
-                    <p class="project-desc">A telegram bot coded in python. Meant to facilitate a word guessing game in group chats 
-                        where players take turns sending words to the bot for other players to guess.
-                        <br> Made over the winter holidays and learnt more about Bot implementation and API usage. 
-                        Can be found on Telegram @GuessMyWord_GameBot
+                    <p class="project-desc">A Python Telegram bot that facilitates a word guessing game in group chats, where players take turns sending words for others to guess.
+                        <br>Developed to explore bot implementation and API usage. Available on Telegram as @GuessMyWord_GameBot.
                     </p>
                     <div class="btn-container">
                         <button class="btn btn-color-2 project-btn" onclick="window.open('https://t.me/guessmyword_gamebot')">Tele Link</button>
                     </div>
                 </div>
+
+                <div class="details-container color-container">
+                    <div class="project-text-banner">
+                        <span>JAKARTA EE SYSTEM</span>
+                    </div>
+                    <h2 class="experience-subtitle project-title">Hotel Reservation System</h2>
+                    <h3>Oct '24</h3>
+                    <p class="project-desc">A Jakarta EE-based hotel reservation system developed in Apache NetBeans, using a multi-tiered architecture to support hotel reservation operations through a command-line interface (CLI).
+                    </p>
+                </div>
+
                 <div class="details-container color-container">
                     <div class="article-container">
-                        <img src="./assets/sla-cover.png" alt="Project 1" class="project-img">
+                        <img src="./assets/dungeon-luncheon.png" alt="2D Rogue-like Shooter project" class="project-img">
                     </div>
-                    <h2 class="experience-subtitle project-title">AI Property Smart Search</h2>
-                    <h3>Aug - Nov '25</h3>
-                    <p class="project-desc">With SLA as an industry partner, this is an AI-powered smart search property site made in the IS4108 Capstone Project at NUS.
-                        <br>
-                        It is coded in ReactJS for the frontend and Node.js for the backend, with a PostgreSQL database. In addition, 
-                        the AI model is built using Langchain and Azure OpenAI API to provide intelligent property search capabilities. View the video to learn more!
-
-                    </p>  
-                    
+                    <h2 class="experience-subtitle project-title">2D Rogue-like Shooter</h2>
+                    <h3>May - Aug '23</h3>
+                    <p class="project-desc">Dungeon Luncheon is a 2D top-down shooter made in Unity and coded in C#, with unique hand-drawn sprite assets. It was a pair project for the NUS Orbital program.
+                        <br>Developed over 180 hours, with experience in unit testing, version control, and project design.
+                    </p>
                     <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://www.youtube.com/watch?v=OoS8T235cOE')">Video</button>
+                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/ryan-txn/gameIsGame')">Github</button>
+                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://www.youtube.com/watch?v=BOqt3R3saLM')">Video</button>
+                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://bungxd.itch.io/dungeon-luncheon')">Game</button>
                     </div>
                 </div>
             </div>

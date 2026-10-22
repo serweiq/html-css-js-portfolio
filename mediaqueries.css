@@ -67,6 +67,19 @@
     .experience-subtitle {
         font-size: 1.25rem;
     }
+    .work-experience-card {
+        display: block;
+    }
+    .work-experience-logo {
+        display: block;
+        margin: 0 auto 1.5rem;
+    }
+    .work-experience-heading {
+        display: block;
+    }
+    .work-experience-date {
+        margin-top: 0.5rem;
+    }
     .logo {
         font-size: 1.5rem;
     }
