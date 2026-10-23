@@ -375,6 +375,23 @@ section {
     font-weight: 600;
 }
 
+.skill-bubbles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.skill-bubble {
+    padding: 0.35rem 0.75rem;
+    border: 1px solid black;
+    border-radius: 999px;
+    background-color: white;
+    color: black;
+    font-size: 0.85rem;
+    line-height: 1.2;
+}
+
 .work-experience-list {
     margin: 1rem 0 0 1.25rem;
     color: rgb(85, 85, 85);
@@ -551,6 +568,11 @@ article .icon {
 .project-title {
     margin: 1rem;
     color: black;
+}
+
+.color-container > .skill-bubbles {
+    justify-content: center;
+    margin: 0.75rem 0 1rem;
 }
 
 .project-btn {
