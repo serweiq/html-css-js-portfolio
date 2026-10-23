@@ -482,6 +482,72 @@ article .icon {
     border: 1px solid rgb(53, 53, 53);
 }
 
+.project-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20rem;
+    height: 20rem;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: white;
+    border-radius: 2rem;
+}
+
+.carousel-counter {
+    position: absolute;
+    z-index: 1;
+    top: 0.75rem;
+    right: 1rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 1rem;
+    background: rgb(0 0 0 / 65%);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.carousel-button {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 0;
+    border-radius: 50%;
+    background: rgb(0 0 0 / 60%);
+    color: white;
+    font-size: 1.25rem;
+    line-height: 1;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: background 300ms ease;
+}
+
+.carousel-button:hover,
+.carousel-button:focus-visible {
+    background: rgb(0 0 0 / 85%);
+}
+
+.carousel-button-previous {
+    left: 0.75rem;
+}
+
+.carousel-button-next {
+    right: 0.75rem;
+}
+
 .project-title {
     margin: 1rem;
     color: black;
