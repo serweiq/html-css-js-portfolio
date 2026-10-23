@@ -67,6 +67,17 @@
     .experience-subtitle {
         font-size: 1.25rem;
     }
+    .skill-category-grid {
+        grid-template-columns: 1fr;
+        margin-top: 1.5rem;
+    }
+    .skill-category-card:last-child:nth-child(odd) {
+        grid-column: auto;
+        width: auto;
+    }
+    .skill-category-card .experience-subtitle {
+        font-size: 1.25rem;
+    }
     .work-experience-card {
         display: block;
     }
