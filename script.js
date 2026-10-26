@@ -7,6 +7,24 @@ function toggleMenu() {
     icon.classList.toggle("open");
 }
 
+// Preload images to improve carousel performance
+function preloadImage(src) {
+    const preloadedImage = new Image();
+
+    return new Promise((resolve, reject) => {
+        preloadedImage.onload = () => {
+            if (typeof preloadedImage.decode === "function") {
+                preloadedImage.decode().then(resolve).catch(reject);
+                return;
+            }
+
+            resolve();
+        };
+        preloadedImage.onerror = () => reject(new Error(`Unable to load carousel image: ${src}`));
+        preloadedImage.src = src;
+    });
+}
+
 function initializeCarousel(selector, images, projectName) {
     document.querySelectorAll(selector).forEach((carousel) => {
         const image = carousel.querySelector(".carousel-image");
@@ -14,16 +32,46 @@ function initializeCarousel(selector, images, projectName) {
         const previousButton = carousel.querySelector(".carousel-button-previous");
         const nextButton = carousel.querySelector(".carousel-button-next");
         let currentImage = 0;
+        let isLoading = false;
+        const preloadedImages = images.map((src) => preloadImage(src));
 
-        function showImage(imageIndex) {
-            currentImage = (imageIndex + images.length) % images.length;
-            image.src = images[currentImage];
-            image.alt = `${projectName} project screenshot ${currentImage + 1} of ${images.length}`;
-            counter.textContent = `${currentImage + 1} / ${images.length}`;
+        Promise.allSettled(preloadedImages).then((results) => {
+            results
+                .filter((result) => result.status === "rejected")
+                .forEach((result) => console.error(result.reason));
+        });
+
+        async function showImage(imageIndex) {
+            if (isLoading) {
+                return;
+            }
+
+            const nextImage = (imageIndex + images.length) % images.length;
+            isLoading = true;
+            previousButton.disabled = true;
+            nextButton.disabled = true;
+
+            try {
+                await preloadedImages[nextImage];
+                currentImage = nextImage;
+                image.src = images[currentImage];
+                image.alt = `${projectName} project screenshot ${currentImage + 1} of ${images.length}`;
+                counter.textContent = `${currentImage + 1} / ${images.length}`;
+            } catch (error) {
+                console.error(error);
+            } finally {
+                isLoading = false;
+                previousButton.disabled = false;
+                nextButton.disabled = false;
+            }
         }
 
-        previousButton.addEventListener("click", () => showImage(currentImage - 1));
-        nextButton.addEventListener("click", () => showImage(currentImage + 1));
+        previousButton.addEventListener("click", () => {
+            void showImage(currentImage - 1);
+        });
+        nextButton.addEventListener("click", () => {
+            void showImage(currentImage + 1);
+        });
     });
 }
 
