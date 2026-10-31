@@ -75,6 +75,12 @@ function initializeCarousel(selector, images, projectName) {
     });
 }
 
+initializeCarousel(".parkourse-carousel", [
+    "./assets/projects/parkourse/ParkourseThumbnail.png",
+    "./assets/projects/parkourse/Garena Ultimate Hackathon 2026 Certificate.jpg",
+    "./assets/projects/parkourse/parkoursegamplayscreenshot.png"
+], "Parkourse");
+
 initializeCarousel(".jolliville-carousel", [
     "./assets/projects/jolliville/jolliville1.png",
     "./assets/projects/jolliville/jolliville2.jpg",
