@@ -58,6 +58,14 @@
     .about-containers, .contact-info-upper-container, .btn-container {
         flex-wrap: wrap;
     }
+    .about-containers {
+        flex-direction: column;
+    }
+    .details-container {
+        box-sizing: border-box;
+        min-width: 0;
+        width: 100%;
+    }
     .contact-info-container {
         margin: 0;
     }
