@@ -205,11 +205,19 @@ section {
     text-align: center;
 }
 
-#socials-container {
+.socials-container {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
     gap: 1rem;
+}
+
+.socials-container .icon {
+    transition: transform 200ms ease, filter 200ms ease;
+}
+
+.socials-container .icon:hover {
+    transform: scale(1.1);
 }
 
 /* ICONS */
