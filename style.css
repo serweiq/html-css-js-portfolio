@@ -669,10 +669,28 @@ article .icon {
 /* FOOTER */
 
 footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
     height: 20vh;
     margin: 0 1rem;
+    padding-bottom: 1.5rem;
 }
 
-footer p {
+footer nav {
+    height: auto;
+}
+
+.footer-meta {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    color: rgb(85, 85, 85);
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.footer-meta p {
     text-align: center;
 }

@@ -53,7 +53,10 @@
     }
     footer nav {
         height: fit-content;
-        margin-bottom: 2rem;
+    }
+    .footer-meta {
+        flex-direction: column;
+        gap: 0.5rem;
     }
     .about-containers, .contact-info-upper-container, .btn-container {
         flex-wrap: wrap;
