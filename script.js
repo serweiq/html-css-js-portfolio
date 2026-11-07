@@ -31,6 +31,41 @@ document.querySelectorAll(".about-containers, .work-experience-container, #proje
 });
 
 const backToTopButton = document.querySelector(".back-to-top");
+const floatingNav = document.querySelector(".floating-nav");
+const floatingNavToggle = document.querySelector(".floating-nav-toggle");
+const floatingNavMenu = document.querySelector(".floating-nav-menu");
+const floatingNavLinks = floatingNavMenu.querySelectorAll("a");
+
+function closeFloatingNav() {
+    floatingNavMenu.classList.remove("open");
+    floatingNavToggle.setAttribute("aria-expanded", "false");
+    floatingNavToggle.setAttribute("aria-label", "Open navigation menu");
+}
+
+function toggleFloatingNav() {
+    const isOpen = floatingNavMenu.classList.toggle("open");
+    floatingNavToggle.setAttribute("aria-expanded", String(isOpen));
+    floatingNavToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+}
+
+floatingNavToggle.addEventListener("click", toggleFloatingNav);
+floatingNavLinks.forEach((link) => {
+    link.addEventListener("click", closeFloatingNav);
+});
+
+function removeTouchFocus(event) {
+    if (event.pointerType === "touch") {
+        event.currentTarget.blur();
+    }
+}
+
+floatingNavToggle.addEventListener("pointerup", removeTouchFocus);
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        closeFloatingNav();
+    }
+});
 
 function updateScrollUI() {
     const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -40,6 +75,11 @@ function updateScrollUI() {
 
     document.documentElement.style.setProperty("--scroll-progress", `${scrollProgress}%`);
     backToTopButton.classList.toggle("is-visible", window.scrollY > 500);
+    floatingNav.classList.toggle("is-visible", window.scrollY > 500);
+
+    if (window.scrollY <= 500) {
+        closeFloatingNav();
+    }
 }
 
 window.addEventListener("scroll", updateScrollUI, { passive: true });
@@ -48,6 +88,7 @@ updateScrollUI();
 backToTopButton.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
 });
+backToTopButton.addEventListener("pointerup", removeTouchFocus);
 
 // Preload images to improve carousel performance
 function preloadImage(src) {
