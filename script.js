@@ -7,6 +7,48 @@ function toggleMenu() {
     icon.classList.toggle("open");
 }
 
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const revealObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    },
+    { threshold: 0.15 }
+);
+
+document.querySelectorAll("section").forEach((section) => {
+    section.classList.add("reveal");
+    revealObserver.observe(section);
+});
+
+document.querySelectorAll(".about-containers, .work-experience-container, #projects .about-containers").forEach((container) => {
+    container.classList.add("reveal-stagger");
+    revealObserver.observe(container);
+});
+
+const backToTopButton = document.querySelector(".back-to-top");
+
+function updateScrollUI() {
+    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollProgress = scrollableHeight > 0
+        ? (window.scrollY / scrollableHeight) * 100
+        : 0;
+
+    document.documentElement.style.setProperty("--scroll-progress", `${scrollProgress}%`);
+    backToTopButton.classList.toggle("is-visible", window.scrollY > 500);
+}
+
+window.addEventListener("scroll", updateScrollUI, { passive: true });
+updateScrollUI();
+
+backToTopButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
+});
+
 // Preload images to improve carousel performance
 function preloadImage(src) {
     const preloadedImage = new Image();

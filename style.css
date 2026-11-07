@@ -16,6 +16,18 @@ html {
     scroll-behavior: smooth;
 }
 
+body::before {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: var(--scroll-progress, 0%);
+    height: 4px;
+    background: grey;
+    content: "";
+    transition: width 100ms ease-out;
+}
+
 p { 
     color: rgb(85, 85, 85);
 }
@@ -238,7 +250,7 @@ section {
 
 .btn {
     font-weight: 600;
-    transform: all 300ms ease;
+    transition: all 300ms ease;
     padding: 1rem;
     width: 8rem;
     border-radius: 2rem;
@@ -626,6 +638,72 @@ article .icon {
     margin-top: 0.3rem;
 }
 
+/* MOTION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.reveal-stagger.is-visible > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-stagger.is-visible > *:nth-child(2) {
+    transition-delay: 80ms;
+}
+
+.reveal-stagger.is-visible > *:nth-child(3) {
+    transition-delay: 160ms;
+}
+
+.reveal-stagger.is-visible > *:nth-child(4) {
+    transition-delay: 240ms;
+}
+
+.back-to-top {
+    position: fixed;
+    z-index: 10;
+    right: 2rem;
+    bottom: 2rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1px solid rgb(53, 53, 53);
+    border-radius: 50%;
+    background: white;
+    color: rgb(53, 53, 53);
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 300ms ease, transform 300ms ease, background 300ms ease;
+    pointer-events: none;
+    cursor: pointer;
+}
+
+.back-to-top.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+    background: rgb(53, 53, 53);
+    color: white;
+}
+
 /* CONTACT SECTION */
 
 #contact {
@@ -641,7 +719,7 @@ article .icon {
     border-radius: 2rem;
     border: rgb(53, 53, 53) 0.1rem solid;
     border-color: rgb(163,163,163);
-    background: (250,250,250);
+    background: rgb(250, 250, 250);
     margin: 2rem auto;
     padding: 0.5rem;
 }
@@ -693,4 +771,29 @@ footer nav {
 
 .footer-meta p {
     text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    body::before {
+        transition: none;
+    }
+
+    .reveal,
+    .reveal-stagger > *,
+    .back-to-top {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .back-to-top {
+        right: 1rem;
+        bottom: 1rem;
+    }
 }
