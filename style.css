@@ -10,6 +10,7 @@
 
 body {
     font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
 }
 
 html {
@@ -546,20 +547,25 @@ article .icon {
 .color-container {
     display: flex;
     flex-direction: column;
+    min-width: 0;
     border-color: rgb(163,163,163);
     background-color: rgb(250,250,250);
 }
 
 .project-img {
+    display: block;
+    width: 100%;
     border-radius: 2rem;
-    height: 20rem;
+    height: auto;
 }
 
 .project-text-banner {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 20rem;
+    width: min(100%, 16rem);
+    align-self: center;
+    aspect-ratio: 1;
     border-radius: 2rem;
     background: linear-gradient(135deg, rgb(224, 235, 247), rgb(245, 239, 223));
     color: rgb(53, 53, 53);
@@ -578,11 +584,27 @@ article .icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 20rem;
-    height: 20rem;
+    width: min(100%, 16rem);
+    aspect-ratio: 1;
+    height: auto;
     max-width: 100%;
     margin: 0 auto;
     overflow: hidden;
+}
+
+#projects .about-containers {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: stretch;
+}
+
+#projects .color-container {
+    width: auto;
+}
+
+#projects .color-container > .article-container {
+    width: min(100%, 16rem);
+    align-self: center;
 }
 
 @media screen and (max-width: 600px) {
